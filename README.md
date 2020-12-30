@@ -6,7 +6,7 @@
 A automação por si, foi feita em python (em sua versão 3.8+) sendo utilizado juntamente com o Selenium WebDriver.
 
 
-## Requisitos para a execução dos s:
+## Requisitos para a execução dos scripts:
 
 
 ### Linux:
