@@ -3,10 +3,10 @@
 > ***Este repositório tem por objetivo disponibilizar o teste técnico de QA para a avaliação do mesmo pela empresa.***
 
 1. <a href="#ExecAuto">Execução da Automação (Front-end)</a> </br>
-  1.2  <a href="ReqExec">Requisitos para a execução</a> 
+  1.2 <a href="ReqExec">Requisitos para a execução</a> </br>
     1. <a href="Linux">Linux</a> 
-    2. <a href="Windows">Windows</a>
-  1.3 <a href="Exec">Execução dos s</a> </br>
+    2. <a href="Windows">Windows</a> </br>
+  1.3 <a href="Exec">Execução dos scrips</a>
 2. <a href="#ExecAutoBack">Execução da Automação (Back-end)</a> </br>
   
 <div id="ExecAuto"></div>
