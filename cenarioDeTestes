@@ -1,0 +1,50 @@
+Funcionalidade: Identificação de oportunidades
+
+Contexto:
+	Dado que o usuário esteja logado
+	E tenha acesso para gerenciar suas opotunidades no grid “Oportunidades”
+
+Cenário: visuailzação das informações das opotunidades
+	Dado um ícone circular contendo “!” em seu centro
+	Quando é clicado neste
+	Então deve ser aberto um modal, para que seja visto mais informações sobre essas oportunidades
+
+Cenário: Registo de opotunidades
+	Quando o usuário contém ao menos uma oportunidade exibida
+	E esta foi devidamente registrada
+	Então deve ser apresentada por um objeto em forma de um quadrado com a cor que represente a categoria desta oportunidade, bem como sua quantidade.
+
+---
+
+Funcionalidade: Geolocalização
+
+Contexto:
+	Dado que o usuário esteja logado
+	E tenha acesso para visualizar o Grid “Local”
+
+Cenário: Exibição de localização
+	Quando o usuário clicar no modal de visualização da API do Google
+	Então este deve poder interagir com o modal, com Zoom Out ou Zoom In, bem com o redirecionamento para a rota do local informado
+
+Cenário: Informação de endereço
+	Quando clicar no ícone de indicação abaixo do modal do MAPS
+	Em seguida um modal de interação deve ser apresentado
+	Então neste deverá ser possível editar o endereço presente ou apenas visualizá-lo
+
+---
+
+Funcionalidade: Busca por atividades
+
+Contexto:
+	Dado que o usuário esteja logado
+	E tenha acesso para buscar/visualizar suas atividades
+
+Cenário: Pesquisa por atividades
+	Quando o usuário digitar alguma coisa relacionado a suas atividades na barra de pesquisa
+	Então deve ser apresentado informações das atividades referentes ao informado na barra de pesquisa
+
+Cenário: Filtro por status de atividade
+	Dado que o usuário selecionou pode filtrar pelo status da atividade
+	Quando este seleciona um dos filtros apresentados abaixo da barra de pesquisa das atividades
+	Então deve ser exibido apenas os resultados deferentes ao filtro por status de atividade
+	
