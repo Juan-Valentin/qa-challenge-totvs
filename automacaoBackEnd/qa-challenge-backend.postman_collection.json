@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "7f094817-c1af-4541-a3db-4c1d9eb51484",
+		"name": "qa-challenge-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MethodGET",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"var responsesGET = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test type date of response!\", () => {\r",
+							"    pm.expect(responsesGET).to.be.an(\"array\");\r",
+							"\r",
+							"    responsesGET.map( response => {\r",
+							"        pm.expect(response.id).to.be.a(\"number\");\r",
+							"        pm.expect(response.name).to.be.a(\"string\");\r",
+							"        pm.expect(response.username).to.be.a(\"string\");\r",
+							"        pm.expect(response.email).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(response.address).to.be.an(\"object\");\r",
+							"        pm.expect(response.address.street).to.be.a(\"string\");\r",
+							"        pm.expect(response.address.suite).to.be.a(\"string\");\r",
+							"        pm.expect(response.address.city).to.be.a(\"string\");\r",
+							"        pm.expect(response.address.zipcode).to.be.a(\"string\");\r",
+							"        pm.expect(response.address.geo).to.be.a(\"object\");\r",
+							"        pm.expect(response.address.geo.lat).to.be.a(\"string\");\r",
+							"        pm.expect(response.address.geo.lng).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(response.phone).to.be.a(\"string\");\r",
+							"        pm.expect(response.website).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(response.company).to.be.an(\"object\");\r",
+							"        pm.expect(response.company.name).to.be.a(\"string\");\r",
+							"        pm.expect(response.company.catchPhrase).to.be.a(\"string\");\r",
+							"        pm.expect(response.company.bs).to.be.a(\"string\");\r",
+							"    });\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://jsonplaceholder.typicode.com/users",
+					"protocol": "http",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MethodPUT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 - OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 400ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});\r",
+							"\r",
+							"var responsesPUT = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test type date of response!\", () => {\r",
+							"    pm.expect(responsesPUT).to.be.an(\"object\");\r",
+							"\r",
+							"        pm.expect(responsesPUT.name).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.username).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.email).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(responsesPUT.address).to.be.an(\"object\");\r",
+							"        pm.expect(responsesPUT.address.street).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.address.suite).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.address.city).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.address.zipcode).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.address.geo).to.be.a(\"object\");\r",
+							"        pm.expect(responsesPUT.address.geo.lat).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.address.geo.lng).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(responsesPUT.phone).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.website).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(responsesPUT.company).to.be.an(\"object\");\r",
+							"        pm.expect(responsesPUT.company.name).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.company.catchPhrase).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPUT.company.bs).to.be.a(\"string\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Leanne Graham Valentin\",\r\n        \"username\": \"Bret\",\r\n        \"email\": \"Sincere@april.biz\",\r\n        \"address\": {\r\n            \"street\": \"Kulas Light\",\r\n            \"suite\": \"Apt. 556\",\r\n            \"city\": \"Gwenborough\",\r\n            \"zipcode\": \"92998-3874\",\r\n            \"geo\": {\r\n                \"lat\": \"-37.3159\",\r\n                \"lng\": \"81.1496\"\r\n            }\r\n        },\r\n        \"phone\": \"1-770-736-8031 x56442\",\r\n        \"website\": \"hildegard.org\",\r\n        \"company\": {\r\n            \"name\": \"Romaguera-Crona\",\r\n            \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n            \"bs\": \"harness real-time e-markets\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://jsonplaceholder.typicode.com/users/1",
+					"protocol": "http",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MethodPOST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});\r",
+							"\r",
+							"var responsesPOST = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Test type date of response!\", () => {\r",
+							"    pm.expect(responsesPOST).to.be.an(\"object\");\r",
+							"\r",
+							"        pm.expect(responsesPOST.name).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.username).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.email).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(responsesPOST.address).to.be.an(\"object\");\r",
+							"        pm.expect(responsesPOST.address.street).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.address.suite).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.address.city).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.address.zipcode).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.address.geo).to.be.a(\"object\");\r",
+							"        pm.expect(responsesPOST.address.geo.lat).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.address.geo.lng).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(responsesPOST.phone).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.website).to.be.a(\"string\");\r",
+							"\r",
+							"        pm.expect(responsesPOST.company).to.be.an(\"object\");\r",
+							"        pm.expect(responsesPOST.company.name).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.company.catchPhrase).to.be.a(\"string\");\r",
+							"        pm.expect(responsesPOST.company.bs).to.be.a(\"string\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Juan Valentin\",\r\n        \"username\": \"valentinJuan\",\r\n        \"email\": \"valentin@april.biz\",\r\n        \"address\": {\r\n            \"street\": \"Av. Brasil\",\r\n            \"suite\": \"Apt. 578\",\r\n            \"city\": \"Gwenborough\",\r\n            \"zipcode\": \"92998-3874\",\r\n            \"geo\": {\r\n                \"lat\": \"-37.3159\",\r\n                \"lng\": \"81.1496\"\r\n            }\r\n        },\r\n        \"phone\": \"1-770-736-8031 x56442\",\r\n        \"website\": \"hildegard.org\",\r\n        \"company\": {\r\n            \"name\": \"Romaguera-Crona\",\r\n            \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n            \"bs\": \"harness real-time e-markets\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://jsonplaceholder.typicode.com/users",
+					"protocol": "http",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MethodDELETE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 - OK\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 400ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://jsonplaceholder.typicode.com/users/11",
+					"protocol": "http",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
